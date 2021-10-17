@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:home_credit_partners/check/views/check_view.dart';
 import 'package:home_credit_partners/common/colors.dart';
+import 'package:home_credit_partners/common/components/header.dart';
 import 'package:home_credit_partners/layouts/components/navigation_menu.dart';
 import 'package:home_credit_partners/layouts/safe_area_layout.dart';
 import 'package:home_credit_partners/products/views/products_view.dart';
@@ -36,9 +37,15 @@ class _NavigationLayoutState extends State<NavigationLayout> {
           child: Stack(
             children: [
               SizedBox(
-                  child: screens[_activeIndex],
-                  width: double.infinity,
-                  height: double.infinity),
+                width: double.infinity,
+                height: double.infinity,
+                child: Column(
+                  children: [
+                    Header(),
+                    screens[_activeIndex],
+                  ],
+                ),
+              ),
               Align(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 30),
